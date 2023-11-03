@@ -1,0 +1,42 @@
+#include<stdio.h>
+#include<math.h>
+
+int nhap(int arr[], int n){
+    for(int i = 0; i < n; i++){
+        printf("Nhap cac phan tu mang arr[%d]:",i);
+        scanf("%d",&arr[i]);
+    }
+}
+int Tim_max_Arr(int arr[], int n){ // Hàm tìm số lớn nhất trong mảng
+    int  maxx = arr[0];
+    for(int i = 0; i < n; i++){
+       
+       if(arr[0] < arr[i]){
+        maxx = arr[i];
+       }
+    }
+    printf("So lon nhat trong mang la: %d",maxx);
+}
+
+int xuly(int arr[], int n){// hàm tính trung bình cộng số lẻ ở vị trí chẵn
+    int sum = 0;
+    int s = 0;
+    for(int i = 0; i < n; i++){
+        if(i % 2 == 0 && arr[i] % 2 != 0){
+            s++;
+           sum = sum + arr[i]; 
+        }
+    }
+    printf("Ket qua %d",sum/s);
+}
+int main(){
+    int n;
+    printf("Nhap n:");
+    scanf("%d",&n);
+    int arr[n];
+    nhap(arr,n);
+   // xuly(arr,n);
+   Tim_max_Arr(arr, n);
+    return 0;
+    
+}
